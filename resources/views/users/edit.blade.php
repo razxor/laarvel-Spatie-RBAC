@@ -7,20 +7,21 @@
             <h2>Edit User</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary btn-sm mb-2" href="{{ route('users.index') }}"><i class="fa fa-arrow-left"></i> Back</a>
+            <a class="btn btn-primary btn-sm mb-2" href="{{ route('users.index') }}"><i class="fa fa-arrow-left"></i>
+                Back</a>
         </div>
     </div>
 </div>
 
 @if (count($errors) > 0)
-    <div class="alert alert-danger">
-      <strong>Whoops!</strong> There were some problems with your input.<br><br>
-      <ul>
-         @foreach ($errors->all() as $error)
-           <li>{{ $error }}</li>
-         @endforeach
-      </ul>
-    </div>
+<div class="alert alert-danger">
+    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
 @endif
 
 <form method="POST" action="{{ route('users.update', $user->id) }}">
@@ -57,18 +58,19 @@
                 <strong>Role:</strong>
                 <select name="roles[]" class="form-control" multiple="multiple">
                     @foreach ($roles as $value => $label)
-                        <option value="{{ $value }}" {{ isset($userRole[$value]) ? 'selected' : ''}}>
-                            {{ $label }}
-                        </option>
-                     @endforeach
+                    <option value="{{ $value }}" {{ isset($userRole[$value]) ? 'selected' : '' }}>
+                        {{ $label }}
+                    </option>
+                    @endforeach
                 </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-primary btn-sm mt-2 mb-3"><i class="fa-solid fa-floppy-disk"></i> Submit</button>
+            <button type="submit" class="btn btn-primary btn-sm mt-2 mb-3"><i class="fa-solid fa-floppy-disk"></i>
+                Submit</button>
         </div>
     </div>
 </form>
 
-<p class="text-center text-primary"><small>Tutorial by ItSolutionStuff.com</small></p>
+<p class="text-center text-primary"><small>Tutorial by Raz Ahamed ~ Full Stack Dev</small></p>
 @endsection
