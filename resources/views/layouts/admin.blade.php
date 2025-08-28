@@ -26,7 +26,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel 11 User Roles and Permissions Tutorial - Raz Ahamed ~ Full Stack Dev
+                    Admin Panel
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -54,11 +54,9 @@
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                         @endif
-                        @else       
-                        @can('user-list')                 
+                        @else                        
                         <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
-                        @endcan
-                        @can('role-list|role-create|role-edit|role-delete')
+                        @can('role-list')
                         <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Role</a></li>
                         @endcan
                         <li><a class="nav-link" href="{{ route('products.index') }}">Manage Product</a></li>
