@@ -10,6 +10,14 @@ class AdminDashboardController extends Controller
     //
     public function index()
     {
-        return view('admin.dashboard');
+        return view('adminSection.dashboard');
+    }
+    public function dashboard()
+    {        
+        return view('adminSection.content.dashboard.dashboards-crm');
+    }
+    public function roles()
+    {        
+        return view('adminSection.roles.index');
     }
 }

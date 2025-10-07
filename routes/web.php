@@ -13,21 +13,27 @@ Route::get('/', function () {
     return view('welcome');
 });
   
+// Route::get('/', [AdminLoginControlller::class, 'showLoginForm'])->name('login');
+
+
 Auth::routes();
 // Admin Login
 
-Route::get('/admin', [AdminLoginControlller ::class, 'showLoginForm'])->name('adminLogin');
+// Route::get('/admin', [AdminLoginControlller ::class, 'showLoginForm'])->name('adminLogin');
 
 // end
+
+Route::get('/db', [AdminDashboardController ::class, 'dashboard'])->name('adminDashboard');
+Route::get('/roles', [AdminDashboardController ::class, 'roles'])->name('adminRoles');  
 
 Route::prefix('admin')->name('admin.')->group(function () {
     // Guest-only admin login routes
     Route::middleware('guest')->group(function () {
         Route::get('/login', [AdminLoginControlller::class, 'showLoginForm'])->name('login');
-        Route::post('/login', [AdminLoginControlller::class, 'login'])->name('login.post');
+        Route::post('/login', [AdminLoginControlller::class, 'login'])->name('login.post');        
     });
 
-    // Protected admin area
+    // Protected admin areaA
     Route::middleware(['auth', 'role:Admin'])->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
         Route::post('/logout', [AdminLoginControlller::class, 'logout'])->name('logout');    
@@ -46,4 +52,4 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('products', ProductController::class);
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

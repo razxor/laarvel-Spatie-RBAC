@@ -1,3 +1,10 @@
+# To view the demo
+https://acl.xorsoftbd.com/
+
+# For Login
+Email: admin@gmail.com
+Pass: 123456
+
 # Laravel Role-Based Access Control (RBAC)
 
 This project is a **Laravel application** with **role-based access control** implemented using the [Spatie Laravel Permission](https://github.com/spatie/laravel-permission) package.  
@@ -19,7 +26,7 @@ It provides user authentication and authorization with roles and permissions to 
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/razxor/laarvel-Spatie-RBAC.git
 cd your-project
 
 
